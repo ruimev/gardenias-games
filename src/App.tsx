@@ -37,9 +37,9 @@ export default function App() {
   );
 
   const [expandedGames, setExpandedGames] = React.useState({});
-  const [selectedMatchRanking, setSelectedMatchRanking] = React.useState(null);
+  const [selectedMatchRanking, setSelectedMatchRanking] = React.useState<any>(null);
   const [selectedTeamDetails, setSelectedTeamDetails] = React.useState(null);
-  const [selectedGameRanking, setSelectedGameRanking] = React.useState(null);
+  const [selectedGameRanking, setSelectedGameRanking] = React.useState<any>(null);
   const [activeMatchId, setActiveMatchId] = React.useState(null);
   const [matchResults, setMatchResults] = React.useState({});
   const [matchObservations, setMatchObservations] = React.useState('');
@@ -625,7 +625,7 @@ export default function App() {
 
           <div className="flex flex-wrap gap-2 mb-6">
             {games
-              .sort((a, b) => a.name.localeCompare(b.name))
+              .sort((a, b) => a.name.localeCompare(b.name, 'pt'))
               .map((game) => (
                 <button
                   key={game.id}
@@ -639,7 +639,7 @@ export default function App() {
 
           <div className="space-y-4">
             {games
-              .sort((a, b) => a.name.localeCompare(b.name))
+              .sort((a, b) => a.name.localeCompare(b.name, 'pt'))
               .map((game) => (
                 <div key={game.id} className="bg-[#23263a] p-4 rounded-2xl">
                   <div className="flex justify-between items-start gap-4">
